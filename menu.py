@@ -1,52 +1,52 @@
 # Menu dictionary
 menu = {
-    "Snacks": {
-        "Cookie": .99,
-        "Banana": .69,
-        "Apple": .49,
-        "Granola bar": 1.99
+    "Appertizers": {
+        "Loaded Fries": 5.99,
+        "Jalapeno Poppers": 4.99,
+        "Pretzel Bites": 3.99,
+        "Mozzarella Sticks": 4.99
     },
-    "Meals": {
-        "Burrito": 4.49,
-        "Teriyaki Chicken": 9.99,
-        "Sushi": 7.49,
-        "Pad Thai": 6.99,
-        "Pizza": {
-            "Cheese": 8.99,
-            "Pepperoni": 10.99,
-            "Vegetarian": 9.99
+    "Main Menu": {
+        "Philly Cheesesteak": 10.49,
+        "Fried Fish": 9.99,
+        "Grilled Pork Chops": 8.49,
+        "Smoked Sausage": 6.99,
+        "Wings": {
+            "Lemon Pepper": 8.99,
+            "Mango": 10.99,
+            "Spicy": 9.99
         },
         "Burger": {
-            "Chicken": 7.49,
-            "Beef": 8.49
+            "Smash": 12.49,
+            "Double Cheese Burger": 10.49
         }
     },
     "Drinks": {
+        "Smoothee": {
+            "Small": 2.99,
+            "Medium": 4.49,
+            "Large": 5.99
+        },
         "Soda": {
-            "Small": 1.99,
-            "Medium": 2.49,
-            "Large": 2.99
+            "Sprite": 2.49,
+            "Coke": 3.99,
+            "Mountain Dew": 2.49
         },
-        "Tea": {
-            "Green": 2.49,
-            "Thai iced": 3.99,
-            "Irish breakfast": 2.49
-        },
-        "Coffee": {
-            "Espresso": 2.99,
-            "Flat white": 2.99,
-            "Iced": 3.49
+        "Juice": {
+            "Orange": 3.99,
+            "Pineapple": 4.99,
+            "Apple": 3.49
         }
     },
     "Dessert": {
-        "Chocolate lava cake": 10.99,
+        "Apple Pie": 5.99,
         "Cheesecake": {
             "New York": 4.99,
-            "Strawberry": 6.49
+            "Strawberry": 5.49
         },
-        "Australian Pavlova": 9.99,
-        "Rice pudding": 4.99,
-        "Fried banana": 4.49
+        "Peach Cobbler": 4.99,
+        "Blueberry Muffins": 4.99,
+        "Chocolate Cake": 4.49
     }
 }
 
@@ -55,14 +55,14 @@ menu = {
 menu_dashes = "-" * 42
 
 # Launch the store and present a greeting to the customer
-print("Welcome to the food truck.")
+print("Welcome to the Yummy Good Food Truck.")
 
 # Customers may want to order multiple items, so let's create a continuous
 # loop
 place_order = True
 while place_order:
     # Ask the customer from which menu category they want to order
-    print("From which menu would you like to order? ")
+    print("What would you like to order from the menu? ")
 
     # Create a variable for the menu item number
     i = 1
@@ -121,18 +121,17 @@ while place_order:
             menu_category = input("Type menu number or q to quit: ")
 
             # 3. Check if the customer typed a number
-            elif menu_category.isdigit():
+            if menu_category.isdigit():
                 # Convert the menu selection to an integer
-            if int(menu_category) in menu_items.keys()
+             if int (menu_category) in menu_items.keys():
 
                 # 4. Check if the menu selection is in the menu items
 
                     # Store the item name as a variable
                     menu_category_name = menu_items[int(menu_category)]
 
-                    # Ask the customer for the quantity of the menu item
-                    print( What is the quantity of the of item? ")
-
+                    # Ask the customer for the quantity of the menu 
+                    quantity = input(f"How many of {menu_items} would you like? ")
                     # Check if the quantity is a number, default to 1 if not
                     item_spaces = 1
 
@@ -140,30 +139,26 @@ while place_order:
                     print("Item # | Item name                | Price")
 
                     # Tell the customer that their input isn't valid
-                    print(f"{menu_category} was not a menu option.")
+                    print(f"{menu_category} was not a valid menu option.")
 
                     # Tell the customer they didn't select a menu option
-                    print("You didn't select a number.")
-                    else:
-                    # Tell the customer they didn't select a menu option
-                    print(f"{menu_category} was not a menu option.")
-                    else:
+                    print(f"{menu_category} Is not a menu option.")
         # Tell the customer they didn't select a number
-        print("You didn't select a number.")
+        print("You did not select a number. Please try again")
 
-        while True:
+    while True:
         # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         # 5. Check the customer's input
         while True:
-            print("Which menu would you like to view? ")
+            print("Which menu option would you like to view? ")
 
                 # Keep ordering
-                menu_category = input("Type menu number to view or q to quit: ")
+            menu_category = input("Type menu number to view or q to quit: ")
 
                 # Exit the keep ordering question loop
-                if menu_category == 'q':
+            if menu_category == 'q':
 
 
                 # Complete the order
@@ -171,17 +166,17 @@ while place_order:
 
                 # Since the customer decided to stop ordering, thank them for
                 # their order
-                print("Thank you for your order. ")
+                print("Thank you for your order of Yummy Good Food Truck menu")
 
                 # Exit the keep ordering question loop
                 if menu_category == 'q':
 
 
                 # Tell the customer to try again
-                print(f"{menu_category} was not a menu option.")
+                 print(f"{menu_category} was not a menu option. Please try again.")
 
 # Print out the customer's order
-print("This is what we are preparing for you.\n")
+print("This is what we are preparing for you and your order will be completed shortly.\n")
 
 # Uncomment the following line to check the structure of the order
 #print(order)
@@ -192,19 +187,19 @@ print("--------------------------|--------|----------")
 # 6. Loop through the items in the customer's order
 print("Which menu would you like to view? ")
     # 7. Store the dictionary items as variables
-    menu_category_name = menu_items[int(menu_category)]
+menu_category_name = menu_dashes [int(menu_dashes)]
 
     # 8. Calculate the number of spaces for formatted printing
-    print(menu_dashes)
+print(menu_dashes)
 
     # 9. Create space strings
-    num_item_spaces = 24 - len(key)
+
 
     # 10. Print the item name, price, and quantity
-     print("Item # | Item name                | Price")
+print("Item # | Item name                | Price")
 
 # 11. Calculate the cost of the order using list comprehension
-total_price = sum(item["price"] * item["quantity"] for item in order_list)
+total_price = sum(item["price"] * item["quantity"] for item in menu_category_name)
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 print(f"The total price of the order is: ${total_price:.2f}")
